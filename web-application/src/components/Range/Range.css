@@ -1,0 +1,9 @@
+.RangeBox {
+    margin: 10px;
+    font-size: 14px;
+    color: gray;
+}
+.RangeBox b {
+    display: block;
+    color: #ffffff;
+}

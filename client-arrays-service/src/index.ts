@@ -2,28 +2,15 @@ require('dotenv').config();
 
 import express from 'express';
 const Axios = require('axios');
+const cors = require('cors');
 const app = express();
 const Range = require('./models/range');
 
 const PORT = process.env.PORT || 5005;
 const LOG_SERVICE = process.env.LOG_SERVICE;
 
+app.use(cors());
 app.use(express.json());
-
-app.get('/', (req, res) => res.send('It is "client-arrays-service"'));
-
-// const N = -100;
-//
-// try { // statements to try
-//     const result = Range.generate(N);
-//     Axios.post(LOG_SERVICE, result).then(() => {
-//         console.log('result > ', result);
-//     });
-// } catch (error) {
-//     Axios.post(LOG_SERVICE, {error: error.message}).then(() => {
-//         console.log('error > ', error.message);
-//     });
-// }
 
 app.post('/', (req, res) => {
     const {rangeSize} = req.body;

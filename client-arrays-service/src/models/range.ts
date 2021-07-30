@@ -15,15 +15,18 @@ module.exports.generate = (size: number): Array<number> => {
 };
 
 module.exports.validation = (n: any): Boolean => {
-    if (typeof n === 'undefined') {
+
+    const sizeRange = parseInt(n);
+
+    if (typeof sizeRange === 'undefined') {
         throw new RangeException('Range size is mandatory field');
     }
 
-    if (typeof n !== 'number') {
+    if (typeof sizeRange !== 'number' || isNaN(sizeRange) || n != sizeRange) {
         throw new RangeException('Range size is invalid');
     }
 
-    if (n < 1 || n > 1000) {
+    if (sizeRange < 1 || sizeRange > 1000) {
         throw new RangeException('Range size must be in the range from 1 to 1000');
     }
 
