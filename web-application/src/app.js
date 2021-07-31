@@ -1,15 +1,13 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import env from "react-dotenv";
-
 import Range from './components/Range';
 import ErrorBox from './components/ErrorBox';
-
 import './css/app.css';
 
 const {API_URL} = env;
 
-function App() {
+const App = () => {
   const [range, setRange] = useState(null);
   const [error, setError] = useState(null);
 
@@ -40,6 +38,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
