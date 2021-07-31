@@ -1,14 +1,15 @@
 require('dotenv').config();
 
-import express from 'express';
+const Express = require('express');
 
-const app = express();
+const App = Express();
 const PORT = process.env.PORT || 5004;
-app.use(express.json());
 
-app.post('/', (req, res) => {
+App.use(Express.json());
+
+App.post('/', (req, res) => {
     console.log(req.body, `time: ${new Date()}`);
     res.sendStatus(200);
 });
 
-app.listen(PORT, () => console.log(`Running on port ${PORT}`));
+App.listen(PORT, () => console.info(`Running on port ${PORT}`));

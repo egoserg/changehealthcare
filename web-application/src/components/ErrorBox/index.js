@@ -1,10 +1,9 @@
-import React from "react";
-require('./ErrorBox.css');
+import './errorBox.css';
 
 const ErrorBox = (props) => {
     const { error } = props;
 
-    return !error ? false : <div className='ErrorBox'>{error}</div>;
+    return error && <div className='errorBox'>{error}</div>;
 };
 
 export default ErrorBox;

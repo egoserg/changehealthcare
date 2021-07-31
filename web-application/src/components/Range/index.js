@@ -1,14 +1,13 @@
-require('./Range.css');
+import './range.css';
 
 const Range = (props) => {
     const { range } = props;
 
-    return !range ? false : (
-        <div className='RangeBox'>
+    return range && (
+        <div className='rangeBox'>
             <b>Result:</b>
-            {range ? range.join(', ') : false}
-        </div>
-    );
+            {range && range.join(', ')}
+        </div>);
 };
 
 export default Range;

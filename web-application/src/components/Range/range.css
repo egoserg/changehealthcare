@@ -1,9 +1,9 @@
-.RangeBox {
+.rangeBox {
     margin: 10px;
     font-size: 14px;
     color: gray;
 }
-.RangeBox b {
+.rangeBox b {
     display: block;
     color: #ffffff;
 }
